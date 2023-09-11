@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="styleSheet" href="chat.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Anotação</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Chat</title>
+    </head>
+    <body>
+        <div class="card">
+            <div class="chat-header">Chat</div>
+            <div class="chat-window">
+                <ul class="message-list" id="messageList">
+                    <!-- As mensagens do chat aparecerão aqui -->
+                </ul>
+            </div>
+            <div class="chat-input">
+                <!-- Formulário para o usuário enviar mensagens -->
+                <form id="message-form">
+                    <input type="text" class="message-input" placeholder="Type your message here" id="message-input" required>
+                    <button class="send-button" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    
+        <script>
+            // Função para enviar mensagens quando o formulário for enviado
+            document.getElementById('message-form').addEventListener('submit', function (e) {
+                e.preventDefault(); // Impede o envio do formulário padrão
+    
+                // Obtém o valor da mensagem do campo de entrada
+                var messageInput = document.getElementById('message-input');
+                var messageText = messageInput.value;
+    
+                // Obtém a lista de mensagens
+                var messageList = document.getElementById('messageList');
+    
+                // Cria um novo item de lista para a mensagem
+                var messageItem = document.createElement('li');
+                messageItem.textContent = messageText;
+    
+                // Adiciona a mensagem à lista
+                messageList.appendChild(messageItem);
+    
+                // Limpa o campo de entrada
+                messageInput.value = '';
+            });
+        </script>
+    </body>
+    </html>    
+</body>
+</html>

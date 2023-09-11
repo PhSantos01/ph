@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="styleSheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ph | ajudas</title>
+    <div class="login-box">
+      <form id="login-form">
+        <div class="user-box">
+          <input type="text" id="username" name="" required="">
+          <label for="username">Username</label>
+        </div>
+        <div class="user-box">
+          <input type="password" id="password" name="" required="">
+          <label for="password">Password</label>
+        </div>
+        <center>
+          <a href="#" onclick="validateLogin()">
+            SEND
+            <span></span>
+          </a>
+        </center>
+      </form>
+    </div>
+    
+    <script>
+    function validateLogin() {
+      var usernameInput = document.getElementById('username').value;
+      var passwordInput = document.getElementById('password').value;
+    
+      // Valide as credenciais apenas se o usuário for 'admin' e a senha for 'admin'
+      if (usernameInput === 'admin01' && passwordInput === '123321') {
+        alert('Login bem-sucedido!');
+        // Redirecionar o usuário para outra página após o login bem-sucedido
+        window.location.href = 'home.html'; // Substitua 'outrapagina.html' pelo URL da sua página desejada
+      } else {
+        alert('Credenciais inválidas. Tente novamente.');
+        // Limpar os campos de entrada ou realizar ações apropriadas para um login inválido
+      }
+    }
+    </script>
+    
